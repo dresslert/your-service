@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ServiceCard from '../components/Services/ServiceCard'; // Componente para os cards de serviços
+import ServiceCard from '../../components/Services/ServiceCard'; // Componente para os cards de serviços
 
 const Container = styled.div`
   color: #fff;

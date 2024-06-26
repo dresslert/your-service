@@ -5,29 +5,30 @@ from rest_framework.authtoken.models import Token
 from django.contrib.auth import authenticate
 from .models import CustomUser, ClientProfile, ProfessionalProfile
 from .serializers import CustomUserSerializer, ClientProfileSerializer, ProfessionalProfileSerializer
-
-
 class UserCreateAPIView(APIView):
     """
     View para criação de usuário.
     """
     def post(self, request):
         serializer = CustomUserSerializer(data=request.data)
-        if serializer.is_valid():
-            is_client = serializer.validated_data.get('is_client', False)
-            is_professional = serializer.validated_data.get('is_professional', False)
+        try:
+            if serializer.is_valid(raise_exception=True):
+                is_client = serializer.validated_data.get('is_client', False)
+                is_professional = serializer.validated_data.get('is_professional', False)
 
-            user = serializer.save()
+                user = serializer.save()
 
-            # Cria o perfil correspondente se is_client ou is_professional for True
-            if is_client:
-                ClientProfile.objects.create(user=user)
-            elif is_professional:
-                ProfessionalProfile.objects.create(user=user)
+                # Cria o perfil correspondente se is_client ou is_professional for True
+                if is_client:
+                    ClientProfile.objects.create(user=user)
+                elif is_professional:
+                    ProfessionalProfile.objects.create(user=user)
 
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+        except AssertionError as e:
+            return Response({'detail': str(e)}, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 class UserLoginAPIView(APIView):
     """
     View para login de usuário utilizando o email.

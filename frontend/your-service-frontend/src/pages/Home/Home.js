@@ -2,11 +2,11 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FaBalanceScale, FaCommentsDollar, FaLaptopCode, FaMedkit, FaChalkboardTeacher } from 'react-icons/fa';
-import ServiceCard from '../components/Home/CardsHome';
-import HowItWorks from '../components/Home/HowItWorks';
-import  SecurityTrust from '../components/Home/ SecurityTrust';
-import StoriesSuccess from '../components/Home/StoriesSuccess';
-import CallAction from '../components/Home/CallAction';
+import ServiceCard from '../../components/Home/CardsHome';
+import HowItWorks from '../../components/Home/HowItWorks';
+import  SecurityTrust from '../../components/Home/ SecurityTrust';
+import StoriesSuccess from '../../components/Home/StoriesSuccess';
+import CallAction from '../../components/Home/CallAction';
 
 // Keyframes for animations
 const fadeIn = keyframes`

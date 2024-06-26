@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiHome, FiClipboard, FiInfo, FiMail } from 'react-icons/fi'; // Importe os ícones desejados
+import { FiHome, FiClipboard, FiInfo, FiMail, FiUser } from 'react-icons/fi'; // Importe os ícones desejados
 
 const Navbar = () => {
   return (
@@ -12,7 +12,7 @@ const Navbar = () => {
               Serviços Profissionais Remotos
             </Link>
           </div>
-          <div className="flex space-x-4">
+          <div className="flex flex-grow justify-center">
             <Link to="/" className="flex items-center px-3 py-2 text-white hover:bg-gray-800 rounded-md transition duration-300">
               <FiHome className="mr-1" /> Home
             </Link>
@@ -24,6 +24,11 @@ const Navbar = () => {
             </Link>
             <Link to="/contact" className="flex items-center px-3 py-2 text-white hover:bg-gray-800 rounded-md transition duration-300">
               <FiMail className="mr-1" /> Contato
+            </Link>
+          </div>
+          <div>
+            <Link to="/login" className="flex items-center px-3 py-2 text-white hover:bg-gray-800 rounded-md transition duration-300">
+              <FiUser className="mr-1" /> Login
             </Link>
           </div>
         </div>

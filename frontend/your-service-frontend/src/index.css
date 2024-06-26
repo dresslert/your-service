@@ -10,9 +10,7 @@ html, body, #root {
 }
 
 body {
-  /* Design geométrico */
   background-image: linear-gradient(135deg, #0e1e3a 10%, #1a416f 100%);
-  background-color: #41aea9; /* Cor de fundo alternativa */
   font-family: 'Roboto', sans-serif; /* Exemplo de fonte para o corpo */
   margin: 0;
   padding: 0;
