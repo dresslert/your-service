@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const Card = styled.div`
+const Card = styled(Link)`
+  display: block;
   background: rgba(44, 62, 80, 0.8);
   border: 2px solid #00d1ff;
   border-radius: 15px;
@@ -9,6 +11,7 @@ const Card = styled.div`
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-decoration: none; /* Remove underline from link */
 
   &:hover {
     transform: translateY(-10px);
@@ -28,9 +31,9 @@ const ServiceName = styled.h3`
   color: #ecf0f1;
 `;
 
-const ServiceCard = ({ icon, name }) => {
+const ServiceCard = ({ icon, link, name }) => {
   return (
-    <Card>
+    <Card to={link}>
       <Icon>{icon}</Icon>
       <ServiceName>{name}</ServiceName>
     </Card>

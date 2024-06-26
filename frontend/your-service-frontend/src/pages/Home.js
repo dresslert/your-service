@@ -68,11 +68,11 @@ const SectionContent = styled.p`
 `;
 
 const services = [
-  { name: 'Consultas Jurídicas', icon: <FaBalanceScale /> },
-  { name: 'Consultas Contábeis', icon: <FaCommentsDollar /> },
-  { name: 'Consultoria de TI', icon: <FaLaptopCode /> },
-  { name: 'Telemedicina', icon: <FaMedkit /> },
-  { name: 'Aulas Particulares Online', icon: <FaChalkboardTeacher /> },
+  { name: 'Consultas Jurídicas', link: "/consultas-juridicas", icon: <FaBalanceScale /> },
+  { name: 'Consultas Contábeis', link: "/consultas-contabeis", icon: <FaCommentsDollar /> },
+  { name: 'Consultoria de TI', link: "/consultoria-ti", icon: <FaLaptopCode /> },
+  { name: 'Telemedicina', link: "/telemedicina", icon: <FaMedkit /> },
+  { name: 'Aulas Particulares Online', link: "/aulas-particulares", icon: <FaChalkboardTeacher /> },
 ];
 // Home component
 const Home = () => {
@@ -84,7 +84,12 @@ const Home = () => {
       {/* Services Section */}
       <ServicesGrid>
         {services.map((service, index) => (
-          <ServiceCard key={index} icon={service.icon} name={service.name} />
+          <ServiceCard 
+              key={index} 
+              icon={service.icon} 
+              link={service.link} 
+              name={service.name} 
+          />
         ))}
       </ServicesGrid>
       <StyledLink to="/services">Veja todos os serviços</StyledLink>

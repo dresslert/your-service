@@ -4,16 +4,25 @@ import { Link } from 'react-router-dom';
 
 const Section = styled.div`
   margin: 4rem 0;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   animation: fadeIn 2s ease-in;
 `;
 
 const SectionTitle = styled.h2`
   font-size: 2rem;
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  color: #fff;
 `;
 
 const SectionContent = styled.p`
   font-size: 1.25rem;
+  line-height: 1.6;
+  color: #fff;
 `;
 
 const StyledLink = styled(Link)`
