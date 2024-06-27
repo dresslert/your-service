@@ -7,6 +7,9 @@ import ContactInfo from '../../../components/profile/ContactInfo';
 
 const Container = styled.div`
   padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
 `;
 
 const ClientProfile = () => {

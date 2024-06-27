@@ -36,7 +36,7 @@ function App() {
           <Route path="lawyer-profile" element={<LawyerProfile />} />
           <Route path="client-profile" element={<ClientProfile />} />
           <Route path="search" element={<LawyerSearchPage />} />
-          <Route path="lawyer/:id" element={<LawyerDetails />} />
+          <Route path="lawyer-profile/:id" element={<LawyerDetails />} />
           <Route path="appointment" element={<AppointmentForm />} />
           <Route path="appointment-confirmation" element={<AppointmentConfirmation />} />
           <Route path="appointment-history" element={<AppointmentHistory />} />
