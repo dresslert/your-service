@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ServiceCard from '../../components/Services/ServiceCard'; // Componente para os cards de serviços
+import Layout from '../../components/Layout';
 
 const Container = styled.div`
   color: #fff;
@@ -29,7 +30,7 @@ const CardsContainer = styled.div`
 
 const services = {
   "Consultoria": [
-    { title: "Consultas Jurídicas", link: "/consultas-juridicas", image: "juridicas.jpg" },
+    { title: "Consultas Jurídicas", link: "/services/legal-consultation", image: "juridicas.jpg" },
     { title: "Consultas Contábeis", link: "/consultas-contabeis", image: "contabeis.jpg" },
     { title: "Consultoria de Carreira", link: "/consultoria-carreira", image: "carreira.jpg" },
     { title: "Consultoria de Marketing", link: "/consultoria-marketing", image: "marketing.jpg" },
@@ -50,7 +51,8 @@ const services = {
 };
 
 const Services = () => {
-  return (
+  return ( 
+    <Layout>
     <Container>
       <Title>Nossos Serviços</Title>
       {Object.keys(services).map(category => (
@@ -68,7 +70,8 @@ const Services = () => {
           </CardsContainer>
         </div>
       ))}
-    </Container>
+    </Container> 
+    </Layout>
   );
 };
 

@@ -6,14 +6,19 @@ const Card = styled.div`
   background: rgba(44, 62, 80, 0.8);
   color: #fff;
   padding: 2rem;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
 
+  border: 2px solid #00d1ff;
+  border-radius: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-decoration: none; /* Remove underline from link */
+
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
   }
 `;
 

@@ -1,26 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Definindo estilos globais */
-html, body, #root {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-image: linear-gradient(135deg, #0e1e3a 10%, #1a416f 100%);
-  font-family: 'Roboto', sans-serif; /* Exemplo de fonte para o corpo */
-  margin: 0;
-  padding: 0;
-}
-
-/* Estilos para header e footer transparentes */
-.header {
-  background-color: transparent;
-}
-
-.footer {
-  background-color: transparent;
-}

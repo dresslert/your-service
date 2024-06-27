@@ -7,6 +7,7 @@ import HowItWorks from '../../components/Home/HowItWorks';
 import  SecurityTrust from '../../components/Home/ SecurityTrust';
 import StoriesSuccess from '../../components/Home/StoriesSuccess';
 import CallAction from '../../components/Home/CallAction';
+import Layout from '../../components/Layout';
 
 // Keyframes for animations
 const fadeIn = keyframes`
@@ -68,7 +69,7 @@ const SectionContent = styled.p`
 `;
 
 const services = [
-  { name: 'Consultas Jurídicas', link: "/consultas-juridicas", icon: <FaBalanceScale /> },
+  { name: 'Consultas Jurídicas', link: "/services/legal-consultation", icon: <FaBalanceScale /> },
   { name: 'Consultas Contábeis', link: "/consultas-contabeis", icon: <FaCommentsDollar /> },
   { name: 'Consultoria de TI', link: "/consultoria-ti", icon: <FaLaptopCode /> },
   { name: 'Telemedicina', link: "/telemedicina", icon: <FaMedkit /> },
@@ -77,6 +78,7 @@ const services = [
 // Home component
 const Home = () => {
   return (
+    <Layout>
     <Container>
       <Title>Bem-vindo aos Serviços Profissionais Remotos</Title>
       <Subtitle>Oferecemos serviços profissionais via videochamada para sua conveniência.</Subtitle>
@@ -123,6 +125,7 @@ const Home = () => {
       </Section>
 
     </Container>
+    </Layout>
   );
 };
 

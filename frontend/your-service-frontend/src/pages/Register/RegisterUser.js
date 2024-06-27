@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import FormUtils from '../../components/Utils/FormUtils'; // Verifique o caminho correto do componente conforme necessário
+import FormGrid from '../../components/Utils/FormGrid'; // Verifique o caminho correto do componente conforme necessário
 
 const PageContainer = styled.div`
   display: flex;
@@ -38,111 +38,36 @@ const ChoiceCard = styled.div`
   }
 `;
 
+const USER_FIELDS = {
+  client: [
+    { name: 'username', type: 'text', placeholder: 'Username', icon: 'FiUser', label: 'Username' },
+    { name: 'password', type: 'password', placeholder: 'Password', icon: 'FiLock', label: 'Password' },
+    { name: 'email', type: 'email', placeholder: 'Email', icon: 'FiMail', label: 'Email' },
+    { name: 'phone_number', type: 'text', placeholder: 'Phone Number', icon: 'FiPhone', label: 'Phone Number' },
+    // Outros campos específicos para cliente, como date_of_birth, etc.
+  ],
+  professional: [
+    { name: 'username', type: 'text', placeholder: 'Username', icon: 'FiUser', label: 'Username' },
+    { name: 'password', type: 'password', placeholder: 'Password', icon: 'FiLock', label: 'Password' },
+    { name: 'email', type: 'email', placeholder: 'Email', icon: 'FiMail', label: 'Email' },
+    { name: 'phone_number', type: 'text', placeholder: 'Phone Number', icon: 'FiPhone', label: 'Phone Number' },
+    { name: 'specialization', type: 'text', placeholder: 'Specialization', icon: 'FiBriefcase', label: 'Specialization' },
+    { name: 'license_number', type: 'text', placeholder: 'License Number', icon: 'FiAward', label: 'License Number' },
+    { name: 'years_of_experience', type: 'number', placeholder: 'Years of Experience', icon: 'FiCalendar', label: 'Years of Experience' },
+    // Outros campos específicos para profissional
+  ]
+};
+
 const RegisterUser = () => {
-  const [userType, setUserType] = useState('client'); // Estado para controlar o tipo de usuário selecionado
+  const [userType, setUserType] = useState('client');
 
-  // Função para lidar com a mudança do tipo de usuário
-  const handleUserTypeChange = (type) => {
-    setUserType(type);
-  };
+  const handleUserTypeChange = (type) => setUserType(type);
 
-  // Renderiza os campos de acordo com o tipo de usuário selecionado
-  const renderFields = () => {
-    if (userType === 'client') {
-      return [
-        {
-          name: 'username',
-          type: 'text',
-          placeholder: 'Username',
-          icon: 'FiUser',
-          label: 'Username'
-        },
-        {
-          name: 'password',
-          type: 'password',
-          placeholder: 'Password',
-          icon: 'FiLock',
-          label: 'Password'
-        },
-        {
-          name: 'email',
-          type: 'email',
-          placeholder: 'Email',
-          icon: 'FiMail',
-          label: 'Email'
-        },
-        {
-          name: 'phone_number',
-          type: 'text',
-          placeholder: 'Phone Number',
-          icon: 'FiPhone',
-          label: 'Phone Number'
-        }
-        // Outros campos específicos para cliente, como date_of_birth, etc.
-      ];
-    } else if (userType === 'professional') {
-      return [
-        {
-          name: 'username',
-          type: 'text',
-          placeholder: 'Username',
-          icon: 'FiUser',
-          label: 'Username'
-        },
-        {
-          name: 'password',
-          type: 'password',
-          placeholder: 'Password',
-          icon: 'FiLock',
-          label: 'Password'
-        },
-        {
-          name: 'email',
-          type: 'email',
-          placeholder: 'Email',
-          icon: 'FiMail',
-          label: 'Email'
-        },
-        {
-          name: 'phone_number',
-          type: 'text',
-          placeholder: 'Phone Number',
-          icon: 'FiPhone',
-          label: 'Phone Number'
-        },
-        {
-          name: 'specialization',
-          type: 'text',
-          placeholder: 'Specialization',
-          icon: 'FiBriefcase',
-          label: 'Specialization'
-        },
-        {
-          name: 'license_number',
-          type: 'text',
-          placeholder: 'License Number',
-          icon: 'FiAward',
-          label: 'License Number'
-        },
-        {
-          name: 'years_of_experience',
-          type: 'number',
-          placeholder: 'Years of Experience',
-          icon: 'FiCalendar',
-          label: 'Years of Experience'
-        }
-        // Outros campos específicos para profissional
-      ];
-    }
-  };
-
-  // Título do formulário
-  const formTitle = 'Register';
+  const renderFields = () => USER_FIELDS[userType];
 
   return (
     <PageContainer>
       <LoginPageContainer>
-        {/* Escolha entre cliente e profissional */}
         <ChoiceContainer>
           <ChoiceCard isSelected={userType === 'client'} onClick={() => handleUserTypeChange('client')}>
             Client
@@ -151,15 +76,12 @@ const RegisterUser = () => {
             Professional
           </ChoiceCard>
         </ChoiceContainer>
-
-        {/* Renderização dinâmica dos campos */}
-        <FormUtils
-          title={formTitle}
+        <FormGrid
+          title="Register"
           fields={renderFields()}
           submitText="Register"
-          additionalLinks=''
-          endpoint='/api/users/register/'
-
+          additionalLinks=""
+          endpoint="/api/users/register/"
         />
       </LoginPageContainer>
     </PageContainer>

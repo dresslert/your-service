@@ -24,7 +24,10 @@ const Navbar = () => {
             </Link>
             <Link to="/contact" className="flex items-center px-3 py-2 text-white hover:bg-gray-800 rounded-md transition duration-300">
               <FiMail className="mr-1" /> Contato
-            </Link>
+            </Link> 
+            <Link to="/dashboard" className="flex items-center px-3 py-2 text-white hover:bg-gray-800 rounded-md transition duration-300">
+              <FiMail className="mr-1" /> Dashboard
+            </Link> 
           </div>
           <div>
             <Link to="/login" className="flex items-center px-3 py-2 text-white hover:bg-gray-800 rounded-md transition duration-300">
