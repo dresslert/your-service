@@ -10,7 +10,7 @@ import Testimonials from '../../../components/profile/Testimonials';
 import Portfolio from '../../../components/profile/Portfolio';
 
 const Container = styled.div`
-  padding: 2rem;
+  padding: 5rem;
   max-width: 800px;
   margin: 0 auto;
   font-family: 'Roboto', sans-serif;

@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FooterContainer = styled.footer`
-background: rgb(51,42,42);
-background: linear-gradient(90deg, rgba(51,42,42,1) 100%, rgba(211,211,224,1) 100%, rgba(211,211,224,1) 100%);
+  background: rgb(51,42,42);
+  background: linear-gradient(90deg, rgba(51,42,42,1) 100%, rgba(211,211,224,1) 100%, rgba(211,211,224,1) 100%);
   color: white;
   padding: 1rem;
   width: 100%;

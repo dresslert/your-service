@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import LawyerSearch from '../../components/search/LawyerSearch';
+import backgroundPhoto from '../../assets/seacrh.jpg';
 
 const PageContainer = styled.div`
-  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+  background: url(${backgroundPhoto}) no-repeat center center/cover;
+  padding: 5rem;
 
   @media (max-width: 768px) {
     padding: 10px;
@@ -30,7 +32,6 @@ const lawyers = [
   { id: 7, name: 'Grace Miller', specialty: 'Labor Law', rating: 4.3 },
   { id: 8, name: 'Hank Moore', specialty: 'Real Estate Law', rating: 4.1 },
 ];
-
 
 const LawyerSearchPage = () => {
   return (

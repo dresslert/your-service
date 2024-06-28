@@ -8,8 +8,8 @@ const FormContainer = styled.form`
   align-items: center;
   width: 100%;
   max-width: 400px;
-  background: rgb(25,24,24);
-  background: linear-gradient(90deg, rgba(25,24,24,1) 100%, rgba(211,211,224,1) 100%, rgba(211,211,224,1) 100%);
+  background: rgb(51,42,42);
+  background: linear-gradient(90deg, rgba(51,42,42,1) 100%, rgba(211,211,224,1) 100%, rgba(211,211,224,1) 100%);
   padding: 50px;
   border-radius: 15px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);

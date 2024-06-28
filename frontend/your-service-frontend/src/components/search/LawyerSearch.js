@@ -4,69 +4,66 @@ import styled from 'styled-components';
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 
 const SearchContainer = styled.div`
-  background: rgb(2,0,36);
-  background: linear-gradient(333deg, rgba(2,0,36,1) 0%, rgba(12,12,13,0.8995973389355743) 100%, rgba(21,0,255,0.8631827731092436) 100%);
-  padding: 20px;
-  margin: 20px 0;
+  background: rgb(51,42,42);
+  background: linear-gradient(90deg, rgba(51,42,42,1) 100%, rgba(211,211,224,1) 100%, rgba(211,211,224,1) 100%);
+  padding: 30px;
+  margin: 30px 0;
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   max-width: 800px;
   transition: all 0.3s ease;
 
   @media (max-width: 600px) {
-    padding: 15px;
-    margin: 15px 0;
+    padding: 20px;
+    margin: 20px 0;
   }
 
   @media (max-width: 400px) {
-    padding: 10px;
-    margin: 10px 0;
+    padding: 15px;
+    margin: 15px 0;
   }
 `;
 
 const SearchInput = styled.input`
-  width: calc(100% - 40px);
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #d0d0d0;
-  border-radius: 5px;
-  font-size: 16px;
+  width: 100%;
+  padding: 12px 15px;
+  margin: 15px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 18px;
   transition: border-color 0.3s ease;
 
   &:focus {
-    border-color: #a0a0a0;
+    border-color: #888;
   }
 
   @media (max-width: 600px) {
-    width: calc(100% - 30px);
+    font-size: 16px;
   }
 
   @media (max-width: 400px) {
-    width: calc(100% - 20px);
     font-size: 14px;
   }
 `;
 
 const SpecialtySelect = styled.select`
-  width: calc(100% - 40px);
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #d0d0d0;
-  border-radius: 5px;
-  font-size: 16px;
+  width: 100%;
+  padding: 12px 15px;
+  margin: 15px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 18px;
   transition: border-color 0.3s ease;
 
   &:focus {
-    border-color: #a0a0a0;
+    border-color: #888;
   }
 
   @media (max-width: 600px) {
-    width: calc(100% - 30px);
+    font-size: 16px;
   }
 
   @media (max-width: 400px) {
-    width: calc(100% - 20px);
     font-size: 14px;
   }
 `;
@@ -75,28 +72,27 @@ const LawyerList = styled.ul`
   list-style: none;
   padding: 0;
   width: 100%;
-  background: linear-gradient(90deg, rgba(240, 240, 240, 1) 0%, rgba(255, 255, 255, 1) 100%);
-
 `;
 
 const LawyerItem = styled.li`
-  padding: 10px;
-  border-bottom: 1px solid #e0e0e0;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
   background: #fff;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
 
   &:last-child {
     border-bottom: none;
   }
 
   &:hover {
-    background-color: #f9f9f9;
+    background-color: #f0f0f0;
   }
 `;
 
@@ -149,19 +145,21 @@ const PaginationButton = styled.button`
 
 const PageInfo = styled.span`
   font-size: 16px;
-  color : #ffff;
+  color: #333;
   
   @media (max-width: 400px) {
     font-size: 14px;
   }
 `;
 
-const Text = styled.h2`
-  color : #ffff;
-`; 
+const Title = styled.h2`
+  color: #fff;
+  margin-bottom: 20px;
+`;
 
-const TextP = styled.p`
-  color : #ffff;
+const Subtitle = styled.p`
+  color: #fff;
+  margin-bottom: 20px;
 `;
 
 const LawyersPerPage = 3;
@@ -205,7 +203,7 @@ const LawyerSearch = ({ lawyers }) => {
 
   return (
     <SearchContainer>
-      <Text>Search Lawyers</Text>
+      <Title>Search Lawyers</Title>
       <SearchInput
         type="text"
         placeholder="Search by name..."
@@ -251,7 +249,7 @@ const LawyerSearch = ({ lawyers }) => {
           Next
         </PaginationButton>
       </PaginationContainer>
-      <TextP>{filteredLawyers.length} lawyer(s) found</TextP>
+      <Subtitle>{filteredLawyers.length} lawyer(s) found</Subtitle>
     </SearchContainer>
   );
 };

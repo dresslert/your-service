@@ -13,9 +13,6 @@ const AppContainer = styled.div`
 
 const MainContent = styled.main`
 
-  padding: 5rem;
-  background: #ECF0F1;
-
 `;
 
 const Layout = () => {
