@@ -17,7 +17,7 @@ const HomeContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 63vh;
+  min-height: 80vh;
   text-align: center;
 `;
 
@@ -39,13 +39,13 @@ const Title = styled.h1`
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #ecf0f1;
+  
 `;
 
 const Description = styled.p`
   font-size: 1.5rem;
   margin-bottom: 40px;
-  color: #bdc3c7;
+  
 `;
 
 const Button = styled.button`

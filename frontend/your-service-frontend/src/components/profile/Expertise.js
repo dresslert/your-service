@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 const ExpertiseContainer = styled.div`
   margin-top: 2rem;
-  background: rgb(25, 24, 24);
-  background: linear-gradient(90deg, rgba(25, 24, 24, 1) 0%, rgba(211, 211, 224, 1) 100%);
+  background: rgb(2,0,36);
+  background: linear-gradient(333deg, rgba(2,0,36,1) 0%, rgba(12,12,13,0.8995973389355743) 100%, rgba(21,0,255,0.8631827731092436) 100%);
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -13,6 +13,7 @@ const ExpertiseContainer = styled.div`
 
 const ExpertiseTitle = styled.h3`
   margin-bottom: 1rem;
+  color : #ffff;
 `;
 
 const ExpertiseList = styled.ul`
@@ -22,6 +23,7 @@ const ExpertiseList = styled.ul`
 
 const ExpertiseItem = styled.li`
   margin-bottom: 0.5rem;
+  color : #ffff;
 `;
 
 const Expertise = ({ areas }) => {

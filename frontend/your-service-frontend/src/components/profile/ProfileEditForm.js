@@ -3,11 +3,12 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const FormContainer = styled.form`
+margin-top: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background: rgb(25, 24, 24);
-  background: linear-gradient(90deg, rgba(25, 24, 24, 1) 0%, rgba(211, 211, 224, 1) 100%);
+  background: rgb(2,0,36);
+  background: linear-gradient(333deg, rgba(2,0,36,1) 0%, rgba(12,12,13,0.8995973389355743) 100%, rgba(21,0,255,0.8631827731092436) 100%);
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -23,6 +24,7 @@ const TextArea = styled.textarea`
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+  color : #ffff;
 `;
 
 const Button = styled.button`

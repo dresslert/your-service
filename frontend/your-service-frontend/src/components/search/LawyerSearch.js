@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 
 const SearchContainer = styled.div`
-  background: rgb(25, 24, 24);
-  background: linear-gradient(90deg, rgba(25, 24, 24, 1) 0%, rgba(211, 211, 224, 1) 100%);
+  background: rgb(2,0,36);
+  background: linear-gradient(333deg, rgba(2,0,36,1) 0%, rgba(12,12,13,0.8995973389355743) 100%, rgba(21,0,255,0.8631827731092436) 100%);
   padding: 20px;
   margin: 20px 0;
   border-radius: 15px;
@@ -75,6 +75,8 @@ const LawyerList = styled.ul`
   list-style: none;
   padding: 0;
   width: 100%;
+  background: linear-gradient(90deg, rgba(240, 240, 240, 1) 0%, rgba(255, 255, 255, 1) 100%);
+
 `;
 
 const LawyerItem = styled.li`
@@ -147,10 +149,19 @@ const PaginationButton = styled.button`
 
 const PageInfo = styled.span`
   font-size: 16px;
-
+  color : #ffff;
+  
   @media (max-width: 400px) {
     font-size: 14px;
   }
+`;
+
+const Text = styled.h2`
+  color : #ffff;
+`; 
+
+const TextP = styled.p`
+  color : #ffff;
 `;
 
 const LawyersPerPage = 3;
@@ -194,7 +205,7 @@ const LawyerSearch = ({ lawyers }) => {
 
   return (
     <SearchContainer>
-      <h2>Search Lawyers</h2>
+      <Text>Search Lawyers</Text>
       <SearchInput
         type="text"
         placeholder="Search by name..."
@@ -240,7 +251,7 @@ const LawyerSearch = ({ lawyers }) => {
           Next
         </PaginationButton>
       </PaginationContainer>
-      <p>{filteredLawyers.length} lawyer(s) found</p>
+      <TextP>{filteredLawyers.length} lawyer(s) found</TextP>
     </SearchContainer>
   );
 };
