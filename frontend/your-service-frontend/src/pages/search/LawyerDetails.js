@@ -8,13 +8,14 @@ import Education from '../../components/profile/Education';
 import Testimonials from '../../components/profile/Testimonials';
 import Portfolio from '../../components/profile/Portfolio';
 
-import ScheduleCalendar from '../../components/appointment/ScheduleCalendar';
+import Schedule from '../../components/appointment/Schedule';
 
 const DetailContainer = styled.div`
-  padding: 2rem;
+  padding: 5rem;
   max-width: 800px;
   margin: 0 auto;
   font-family: 'Roboto', sans-serif;
+  margin-bottom: 5rem;
 `;
 
 const LawyerDetails = () => {
@@ -61,7 +62,7 @@ const LawyerDetails = () => {
       <Education degrees={lawyer.education} />
       <Testimonials testimonials={lawyer.testimonials} />
       <Portfolio cases={lawyer.portfolio} />
-      <ScheduleCalendar lawyer={lawyer} appointments={lawyer.appointments} />
+      <Schedule lawyer={lawyer} appointments={lawyer.appointments} />
     </DetailContainer>
   );
 };

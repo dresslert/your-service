@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import SearchBar from '../../components/search/SearchBar';
-import backgroundVideo from '../../assets/homevideo.mp4';
 
 const fadeIn = keyframes`
   from {
@@ -20,16 +19,6 @@ const HomeContainer = styled.div`
   min-height: 100vh;
   text-align: center;
   position: relative;
-`;
-
-const VideoBackground = styled.video`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
 `;
 
 const Overlay = styled.div`
@@ -82,10 +71,6 @@ const Button = styled.button`
 const Home = () => {
   return (
     <HomeContainer>
-      <VideoBackground autoPlay muted loop>
-        <source src={backgroundVideo} type="video/mp4" />
-        Seu navegador não suporta a tag de vídeo.
-      </VideoBackground>
       <Overlay />
       <Content>
         <Title>Advoguei</Title>

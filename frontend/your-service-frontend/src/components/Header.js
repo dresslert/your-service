@@ -106,7 +106,7 @@ const DropdownMenu = styled.div`
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   border-radius: 4px;
-  overflow: hidden;
+  overflow: auto;
 `;
 
 const DropdownItem = styled(NavLink)`

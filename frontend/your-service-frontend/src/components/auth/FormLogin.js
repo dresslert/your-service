@@ -37,7 +37,7 @@ const Label = styled.label`
   width: 100%;
   margin-bottom: 20px;
   font-size: 1rem;
-  color: #2c3e50;
+  color: #fff;
 `;
 
 const InputWrapper = styled.div`
@@ -99,7 +99,7 @@ const LinkWrapper = styled.div`
 `;
 
 const Link = styled.a`
-  color: #007bff;
+  color: #fff;
   text-decoration: none;
   font-size: 0.9rem;
 

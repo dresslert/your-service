@@ -6,65 +6,64 @@ import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 const SearchContainer = styled.div`
   background: rgb(51,42,42);
   background: linear-gradient(90deg, rgba(51,42,42,1) 100%, rgba(211,211,224,1) 100%, rgba(211,211,224,1) 100%);
-  padding: 30px;
-  margin: 30px 0;
-  border-radius: 15px;
+  padding: 40px;
+  margin: 20px 0;
+  border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   max-width: 800px;
+  width: 100%;
   transition: all 0.3s ease;
 
   @media (max-width: 600px) {
-    padding: 20px;
-    margin: 20px 0;
+    padding: 30px;
   }
 
   @media (max-width: 400px) {
-    padding: 15px;
-    margin: 15px 0;
+    padding: 20px;
   }
 `;
 
 const SearchInput = styled.input`
   width: 100%;
-  padding: 12px 15px;
+  padding: 15px;
   margin: 15px 0;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  font-size: 18px;
+  font-size: 16px;
   transition: border-color 0.3s ease;
 
   &:focus {
-    border-color: #888;
+    border-color: #999;
   }
 
   @media (max-width: 600px) {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   @media (max-width: 400px) {
-    font-size: 14px;
+    font-size: 12px;
   }
 `;
 
 const SpecialtySelect = styled.select`
   width: 100%;
-  padding: 12px 15px;
+  padding: 15px;
   margin: 15px 0;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  font-size: 18px;
+  font-size: 16px;
   transition: border-color 0.3s ease;
 
   &:focus {
-    border-color: #888;
+    border-color: #999;
   }
 
   @media (max-width: 600px) {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   @media (max-width: 400px) {
-    font-size: 14px;
+    font-size: 12px;
   }
 `;
 
@@ -72,6 +71,7 @@ const LawyerList = styled.ul`
   list-style: none;
   padding: 0;
   width: 100%;
+  margin: 20px 0;
 `;
 
 const LawyerItem = styled.li`
@@ -81,9 +81,9 @@ const LawyerItem = styled.li`
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  background: #fff;
-  border-radius: 10px;
-  margin-bottom: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: background 0.3s ease;
 
@@ -124,13 +124,13 @@ const PaginationButton = styled.button`
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #333;
+  background-color: #007bff;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #555;
+    background-color: #0056b3;
   }
 
   &:disabled {
@@ -145,7 +145,7 @@ const PaginationButton = styled.button`
 
 const PageInfo = styled.span`
   font-size: 16px;
-  color: #333;
+  color: #fff;
   
   @media (max-width: 400px) {
     font-size: 14px;
@@ -155,11 +155,13 @@ const PageInfo = styled.span`
 const Title = styled.h2`
   color: #fff;
   margin-bottom: 20px;
+  text-align: center;
 `;
 
 const Subtitle = styled.p`
   color: #fff;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: center;
 `;
 
 const LawyersPerPage = 3;

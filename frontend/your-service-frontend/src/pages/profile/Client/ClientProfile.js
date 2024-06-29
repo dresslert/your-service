@@ -1,9 +1,18 @@
 
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import ProfileInfo from '../../../components/profile/ProfileInfo';
 import ProfileEditForm from '../../../components/profile/ProfileEditForm';
 import ContactInfo from '../../../components/profile/ContactInfo';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 const Container = styled.div`
   padding: 2rem;
@@ -11,6 +20,7 @@ const Container = styled.div`
   margin: 0 auto;
   font-family: 'Roboto', sans-serif;
   padding: 5rem;
+  animation: ${fadeIn} 1s ease-in-out;
 `;
 
 const ClientProfile = () => {

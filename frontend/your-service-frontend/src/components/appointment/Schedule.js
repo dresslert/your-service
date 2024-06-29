@@ -9,6 +9,8 @@ import { CSSTransition } from 'react-transition-group';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ScheduleContainer = styled.div`
+  background: rgb(51,42,42);
+  background: linear-gradient(90deg, rgba(51,42,42,1) 100%, rgba(211,211,224,1) 100%, rgba(211,211,224,1) 100%);
   margin-top: 2rem;
   padding: 1rem;
   border: 1px solid #ccc;
@@ -38,7 +40,26 @@ const Card = styled.div`
   }
 `;
 
-const ScheduleCalendar = ({ lawyer, appointments }) => {
+const Text = styled.h2`
+  color: #fff;
+`;
+
+const TextH3 = styled.h3` 
+  color: #fff;
+  padding: 1rem;
+`;
+
+const StyledFormLabel = styled(Form.Label)`
+  color: #fff;
+`;
+
+const ModalFooter = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem; /* Adicione espaçamento se desejar */
+`;
+
+const Schedule = ({ lawyer, appointments }) => {
   const [events, setEvents] = useState([]);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [newAppointment, setNewAppointment] = useState({
@@ -118,10 +139,10 @@ const ScheduleCalendar = ({ lawyer, appointments }) => {
 
   return (
     <ScheduleContainer>
-      <h2>Agendar um Compromisso</h2>
+      <Text>Agendar um Compromisso</Text>
       {confirmMessage && <p>{confirmMessage}</p>}
       <Form.Group>
-        <Form.Label>Selecione a Data:</Form.Label>
+        <StyledFormLabel>Selecione a Data:</StyledFormLabel>
         <Form.Control
           type="date"
           name="date"
@@ -131,7 +152,7 @@ const ScheduleCalendar = ({ lawyer, appointments }) => {
       </Form.Group>
       {newAppointment.date && (
         <>
-          <h3>Horários Disponíveis</h3>
+          <TextH3>Horários Disponíveis</TextH3>
           <CardContainer>
             {renderTimeCards(newAppointment.date)}
           </CardContainer>
@@ -154,18 +175,20 @@ const ScheduleCalendar = ({ lawyer, appointments }) => {
                   onChange={handleInputChange}
                 />
               </Form.Group>
-              <Button variant="primary" onClick={handleConfirmAppointment}>
-                Confirmar Compromisso
-              </Button>
-              <Button variant="secondary" onClick={() => setModalIsOpen(false)}>
-                Cancelar
-              </Button>
             </Form>
           </Modal.Body>
+          <ModalFooter>
+            <Button variant="primary" onClick={handleConfirmAppointment}>
+              Confirmar Compromisso
+            </Button>
+            <Button variant="secondary" onClick={() => setModalIsOpen(false)}>
+              Cancelar
+            </Button>
+          </ModalFooter>
         </Modal>
       </CSSTransition>
     </ScheduleContainer>
   );
 };
 
-export default ScheduleCalendar;
+export default Schedule;

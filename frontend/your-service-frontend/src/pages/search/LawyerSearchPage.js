@@ -1,24 +1,27 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import LawyerSearch from '../../components/search/LawyerSearch';
-import backgroundPhoto from '../../assets/seacrh.jpg';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  background: url(${backgroundPhoto}) no-repeat center center/cover;
+  overflow: auto;
   padding: 5rem;
+  animation: ${fadeIn} 1s ease-in-out;
+  min-height: 100vh;
 
   @media (max-width: 768px) {
-    padding: 10px;
-    height: auto;
-  }
-
-  @media (max-width: 480px) {
-    padding: 5px;
-    height: auto;
+    padding: 20px;
   }
 `;
 

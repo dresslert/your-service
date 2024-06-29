@@ -21,7 +21,7 @@ background: linear-gradient(90deg, rgba(51,42,42,1) 100%, rgba(211,211,224,1) 10
 
   @media (max-width: 768px) {
     width: ${({ isOpen }) => (isOpen ? '200px' : '0')};
-    overflow: hidden;
+    overflow: auto;
     box-shadow: none;
   }
 `;
